@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Запити на змінення</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Запити на змінення</h1>
+        <nav>
+            <a href="index.html">Головна</a>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <h2>Оновлення, видалення та додавання даних</h2>
+            <p>Запити на змінення дозволяють змінювати структуру та дані в базі даних. Це можуть бути команди на оновлення існуючих записів, додавання нових або видалення непотрібних даних.</p>
+            <p><strong>Увага:</strong> Будьте обережні під час виконання таких запитів, оскільки вони можуть призвести до втрати важливих даних.</p>
+        </section>
+        <section>
+            <h3>Приклади запитів</h3>
+            <p>Ось кілька прикладів запитів на змінення:</p>
+            <pre>
+-- Оновлення цін для категорії "Електроніка"
+UPDATE товари
+SET ціна = ціна * 1.1
+WHERE категорія = 'Електроніка';
+
+-- Додавання нового товару
+INSERT INTO товари (назва, категорія, ціна)
+VALUES ('Новий смартфон', 'Електроніка', 15000);
+
+-- Видалення товарів із нульовою кількістю
+DELETE FROM товари
+WHERE кількість = 0;
+            </pre>
+        </section>
+        <section>
+            <h3>Результати перед і після виконання</h3>
+            <p>Приклад результату перед і після виконання запиту:</p>
+            <h4>До оновлення</h4>
+            <table border="1" cellpadding="10" style="border-collapse: collapse; width: 100%; text-align: left;">
+                <thead>
+                    <tr>
+                        <th>Назва</th>
+                        <th>Категорія</th>
+                        <th>Ціна</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Телевізор</td>
+                        <td>Електроніка</td>
+                        <td>10,000 грн</td>
+                    </tr>
+                </tbody>
+            </table>
+            <h4>Після оновлення</h4>
+            <table border="1" cellpadding="10" style="border-collapse: collapse; width: 100%; text-align: left;">
+                <thead>
+                    <tr>
+                        <th>Назва</th>
+                        <th>Категорія</th>
+                        <th>Ціна</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Телевізор</td>
+                        <td>Електроніка</td>
+                        <td>11,000 грн</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+        <section>
+            <h3>Відеоурок</h3>
+            <p>Перегляньте відео, яке демонструє роботу із запитами на змінення:</p>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/KzoAik8YGPc?si=SUwb5foosb7L9KBh" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </section>
+        <section>
+            <h3>Тестування запитів</h3>
+            <p>Спробуйте виконати власний запит:</p>
+            <form action="process-query.php" method="post">
+                <label for="query">Введіть SQL-запит:</label><br>
+                <textarea id="query" name="query" rows="4" cols="50" placeholder="Наприклад: UPDATE ... SET ..."></textarea><br>
+                <button type="submit" class="button">Виконати запит</button>
+            </form>
+        </section>
+        <section>
+            <h3>Поширені запитання (FAQ)</h3>
+            <details>
+                <summary>Як оновити всі записи в таблиці?</summary>
+                <p>Щоб оновити всі записи, не використовуйте <code>WHERE</code>. Наприклад:</p>
+                <pre>
+UPDATE таблиця
+SET колонка = 'нове значення';
+                </pre>
+            </details>
+            <details>
+                <summary>Чи можу я відновити видалені записи?</summary>
+                <p>Після виконання запиту <code>DELETE</code> відновити дані неможливо, якщо не було зроблено резервної копії.</p>
+            </details>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 LABA-1. Всі права захищено.</p>
+    </footer>
+</body>
+</html>

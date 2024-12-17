@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Запити з параметрами</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Запити з параметрами</h1>
+        <nav>
+            <a href="index.html">Головна</a>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <h2>Що таке параметричні запити?</h2>
+            <p>Параметричні запити дозволяють вводити критерії для фільтрації даних. Це дає можливість створювати динамічні запити, де користувач сам задає умови.</p>
+            <p>Такі запити особливо корисні для створення інтерфейсів пошуку, фільтрів або генерації звітів у реальному часі.</p>
+        </section>
+        <section>
+            <h3>Приклад параметричного запиту</h3>
+            <p>Розглянемо приклад SQL-запиту, де користувач вводить мінімальну ціну для вибору товарів:</p>
+            <pre>
+SELECT * FROM товари WHERE ціна > [Введіть мінімальну ціну];
+            </pre>
+            <p>Приклад у вигляді коду PHP для обробки параметра:</p>
+            <pre>
+$stmt = $pdo->prepare("SELECT * FROM товари WHERE ціна > :мінімальна_ціна");
+$stmt->execute(['мінімальна_ціна' => $_POST['мінімальна_ціна']]);
+$result = $stmt->fetchAll();
+            </pre>
+        </section>
+        <section>
+            <h3>Демонстрація</h3>
+            <p>Перегляньте, як виглядає робота параметричних запитів:</p>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/mZ490dhMq94?si=3kDkhZphOsSSBSq3" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </section>
+        <section>
+            <h3>Тестування запитів</h3>
+            <p>Спробуйте створити власний параметричний запит:</p>
+            <form action="process-query.php" method="post">
+                <label for="min-price">Введіть мінімальну ціну:</label><br>
+                <input type="number" id="min-price" name="min-price" placeholder="Наприклад: 1000" required><br>
+                <button type="submit" class="button">Виконати запит</button>
+            </form>
+        </section>
+        <section>
+            <h3>Поширені запитання (FAQ)</h3>
+            <details>
+                <summary>Як працюють параметричні запити?</summary>
+                <p>Параметричний запит використовує плейсхолдери (наприклад, `:параметр`) для передачі даних. Це забезпечує безпеку та запобігає SQL-ін'єкціям.</p>
+            </details>
+            <details>
+                <summary>Чи можна використовувати кілька параметрів у запиті?</summary>
+                <p>Так, ви можете додати кілька параметрів, наприклад:</p>
+                <pre>
+SELECT * FROM товари WHERE ціна BETWEEN :мін AND :макс;
+                </pre>
+            </details>
+            <details>
+                <summary>Як забезпечити безпеку параметричних запитів?</summary>
+                <p>Використовуйте підготовлені вирази (prepared statements) у поєднанні з бібліотеками, такими як PDO у PHP.</p>
+            </details>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 LABA-1. Всі права захищено.</p>
+    </footer>
+</body>
+</html>

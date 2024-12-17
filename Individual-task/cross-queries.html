@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Перехресні запити</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Перехресні запити</h1>
+        <nav>
+            <a href="index.html">Головна</a>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <h2>Робота з кількома таблицями</h2>
+            <p>Перехресні запити дозволяють з'єднувати дані з кількох таблиць для створення детальних звітів або аналізу. Цей тип запитів базується на використанні ключів (первинних та зовнішніх) для об'єднання даних.</p>
+            <p>Перехресні запити зазвичай використовують оператори <code>JOIN</code>, наприклад, <code>INNER JOIN</code>, <code>LEFT JOIN</code>, <code>RIGHT JOIN</code>.</p>
+        </section>
+        <section>
+            <h3>Приклад</h3>
+            <p>Припустимо, є дві таблиці:</p>
+            <ul>
+                <li><strong>Продукти</strong> (id_продукту, назва, ціна)</li>
+                <li><strong>Продажі</strong> (id_продажу, id_продукту, кількість, дата)</li>
+            </ul>
+            <p>Щоб отримати назву продукту, кількість продажів та загальну виручку, використовується запит:</p>
+            <pre>
+SELECT 
+    Продукти.назва, 
+    Продажі.кількість, 
+    (Продажі.кількість * Продукти.ціна) AS Загальна_виручка
+FROM 
+    Продажі
+INNER JOIN 
+    Продукти
+ON 
+    Продажі.id_продукту = Продукти.id_продукту;
+            </pre>
+        </section>
+        <section>
+            <h3>Результат запиту</h3>
+            <table border="1" cellpadding="10" style="border-collapse: collapse; width: 100%; text-align: left;">
+                <thead>
+                    <tr>
+                        <th>Назва продукту</th>
+                        <th>Кількість продажів</th>
+                        <th>Загальна виручка</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Смартфон</td>
+                        <td>10</td>
+                        <td>50,000 грн</td>
+                    </tr>
+                    <tr>
+                        <td>Навушники</td>
+                        <td>20</td>
+                        <td>10,000 грн</td>
+                    </tr>
+                    <tr>
+                        <td>Ноутбук</td>
+                        <td>5</td>
+                        <td>100,000 грн</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+        <section>
+            <h3>Відеоурок</h3>
+            <p>Перегляньте відео, яке демонструє створення перехресних запитів:</p>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/c3luqHbuiso?si=gp8Oe60lyz-9JCsb" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </section>
+        <section>
+            <h3>Схема взаємозв’язків</h3>
+            <p>Схематичне представлення, як таблиці пов'язані між собою:</p>
+            <img src="img/maxresdefault.jpg" alt="Схема зв'язків таблиць" style="width:100%; max-width:00px;">
+        </section>
+        <section>
+            <h3>Тестування запитів</h3>
+            <p>Спробуйте створити власний перехресний запит:</p>
+            <form action="process-query.php" method="post">
+                <label for="query">Введіть SQL-запит:</label><br>
+                <textarea id="query" name="query" rows="4" cols="50" placeholder="Наприклад: SELECT ... FROM ... JOIN ..."></textarea><br>
+                <button type="submit" class="button">Виконати запит</button>
+            </form>
+        </section>
+        <section>
+            <h3>Поширені запитання (FAQ)</h3>
+            <details>
+                <summary>Що таке INNER JOIN?</summary>
+                <p>INNER JOIN — це тип об'єднання, який повертає лише ті рядки, які мають відповідні значення в обох таблицях.</p>
+            </details>
+            <details>
+                <summary>У чому різниця між LEFT JOIN і RIGHT JOIN?</summary>
+                <p>LEFT JOIN повертає всі рядки з лівої таблиці та відповідні рядки з правої таблиці. RIGHT JOIN працює аналогічно, але повертає всі рядки з правої таблиці.</p>
+            </details>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 LABA-1. Всі права захищено.</p>
+    </footer>
+</body>
+</html>
