@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Створення запитів</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Створення запитів</h1>
+        <nav>
+            <a href="index.html">Головна</a>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <h2>Як створити запит</h2>
+            <p>Перш ніж почати, переконайтеся, що знаєте структуру своєї бази даних. Нижче наведено основні кроки для створення запиту:</p>
+            <ul>
+                <li>Виберіть таблицю або джерело даних.</li>
+                <li>Сформулюйте умови запиту.</li>
+                <li>Виконайте запит і перегляньте результати.</li>
+            </ul>
+            <p>Запити дозволяють швидко знаходити інформацію та аналізувати її.</p>
+        </section>
+        <section>
+            <h3>Приклад базового запиту</h3>
+            <p>Цей приклад вибирає всі записи з таблиці "користувачі":</p>
+            <pre>
+SELECT * FROM користувачі;
+            </pre>
+            <p>Щоб відфільтрувати дані, додайте умову:</p>
+            <pre>
+SELECT * FROM користувачі WHERE вік > 18;
+            </pre>
+        </section>
+        <section>
+            <h3>Відеоурок</h3>
+            <p>Перегляньте короткий відеоурок, щоб побачити, як створюються запити:</p>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/k7xQU2uIhw4?si=f3avqOS9Bwd1dtp3" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </section>
+        <section>
+            <h3>Скріншоти</h3>
+            <p>Приклад інтерфейсу роботи з базами даних:</p>
+            <img src="img/getting_started_intro_interactive.png" alt="Інтерфейс бази даних" style="width:100%; max-width:900px;">
+        </section>
+        <section>
+            <h3>Тестування запитів</h3>
+            <p>Спробуйте створити власний SQL-запит у тестовій базі:</p>
+            <form action="process-query.php" method="post">
+                <label for="query">Ваш запит:</label><br>
+                <textarea id="query" name="query" rows="4" cols="50" placeholder="Наприклад: SELECT * FROM таблиця;"></textarea><br>
+                <button type="submit" class="button">Виконати</button>
+            </form>
+        </section>
+        <section>
+            <h3>Поширені запитання</h3>
+            <details>
+                <summary>Що таке SQL-запит?</summary>
+                <p>SQL-запит — це команда, яка дозволяє отримувати, додавати, змінювати або видаляти дані з бази даних.</p>
+            </details>
+            <details>
+                <summary>Які основні запити використовуються?</summary>
+                <p>Основні типи запитів: SELECT (вибірка даних), INSERT (додавання даних), UPDATE (оновлення), DELETE (видалення).</p>
+            </details>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 LABA-1. Всі права захищено.</p>
+    </footer>
+</body>
+</html>

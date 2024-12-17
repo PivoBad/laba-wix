@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Запити з функціями</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Запити з функціями</h1>
+        <nav>
+            <a href="index.html">Головна</a>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <h2>Функції для аналізу даних</h2>
+            <p>Функції дозволяють виконувати підрахунки, підсумки або інші обчислення прямо в базі даних. Вони є незамінним інструментом для аналізу та обробки великих обсягів даних.</p>
+            <ul>
+                <li><strong>SUM:</strong> Обчислює суму значень у колонці.</li>
+                <li><strong>AVG:</strong> Знаходить середнє значення.</li>
+                <li><strong>COUNT:</strong> Рахує кількість записів.</li>
+                <li><strong>MAX/MIN:</strong> Повертає максимальне або мінімальне значення.</li>
+            </ul>
+        </section>
+        <section>
+            <h3>Приклади функцій</h3>
+            <p>Ось кілька прикладів використання функцій у SQL-запитах:</p>
+            <pre>
+-- Знайти загальну зарплату співробітників
+SELECT SUM(зарплата) AS Загальна_зарплата FROM співробітники;
+
+-- Розрахувати середню зарплату співробітників
+SELECT AVG(зарплата) AS Середня_зарплата FROM співробітники;
+
+-- Порахувати кількість співробітників
+SELECT COUNT(*) AS Кількість_співробітників FROM співробітники;
+
+-- Знайти найвищу зарплату
+SELECT MAX(зарплата) AS Найвища_зарплата FROM співробітники;
+
+-- Знайти найнижчу зарплату
+SELECT MIN(зарплата) AS Найнижча_зарплата FROM співробітники;
+            </pre>
+        </section>
+        <section>
+            <h3>Інтерактивна таблиця результатів</h3>
+            <p>Уявімо, що є таблиця "співробітники". Результати деяких функцій можуть виглядати так:</p>
+            <table border="1" cellpadding="10" style="border-collapse: collapse; width: 100%; text-align: left;">
+                <thead>
+                    <tr>
+                        <th>Функція</th>
+                        <th>Результат</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>SUM(зарплата)</td>
+                        <td>250,000 грн</td>
+                    </tr>
+                    <tr>
+                        <td>AVG(зарплата)</td>
+                        <td>25,000 грн</td>
+                    </tr>
+                    <tr>
+                        <td>COUNT(*)</td>
+                        <td>10 співробітників</td>
+                    </tr>
+                    <tr>
+                        <td>MAX(зарплата)</td>
+                        <td>50,000 грн</td>
+                    </tr>
+                    <tr>
+                        <td>MIN(зарплата)</td>
+                        <td>15,000 грн</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+        <section>
+            <h3>Відеоурок</h3>
+            <p>Дізнайтеся, як ефективно використовувати функції у ваших запитах:</p>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/QNfnuK-1YYY?si=XJNy7xDmWcKKT0A-" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </section>
+        <section>
+            <h3>Зображення</h3>
+            <p>Схема, яка демонструє використання функцій:</p>
+            <img src="img/0201ad7o-c199-940x462.png" alt="Схема роботи функцій у SQL" style="width:100%; max-width:600px;">
+        </section>
+        <section>
+            <h3>Тестування запитів</h3>
+            <p>Спробуйте виконати свій запит:</p>
+            <form action="process-query.php" method="post">
+                <label for="query">Введіть ваш SQL-запит:</label><br>
+                <textarea id="query" name="query" rows="4" cols="50" placeholder="Наприклад: SELECT AVG(зарплата) FROM співробітники;"></textarea><br>
+                <button type="submit" class="button">Виконати</button>
+            </form>
+        </section>
+        <section>
+            <h3>FAQ</h3>
+            <details>
+                <summary>Що таке агрегатні функції?</summary>
+                <p>Агрегатні функції — це функції, які виконують обчислення над групою значень і повертають єдине значення, наприклад, SUM, AVG, COUNT, MAX, MIN.</p>
+            </details>
+            <details>
+                <summary>Чи можна використовувати кілька функцій одночасно?</summary>
+                <p>Так, ви можете комбінувати функції, наприклад, для розрахунку середнього значення після відбору даних за умовою.</p>
+            </details>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 LABA-1. Всі права захищено.</p>
+    </footer>
+</body>
+</html>

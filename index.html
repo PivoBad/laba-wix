@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LABA-1 - Все про запити</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Все про запити</h1>
+        <p>Ефективний інструмент роботи з даними</p>
+        <nav>
+            <a href="create-queries.html">Створення запитів</a>
+            <a href="queries-with-functions.html">Запити з функціями</a>
+            <a href="parameterized-queries.html">Запити з параметрами</a>
+            <a href="cross-queries.html">Перехресні запити</a>
+            <a href="modification-queries.html">Запити на змінення</a>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <h2>Ласкаво просимо!</h2>
+            <p>На цьому сайті ви дізнаєтеся про різні типи запитів у базах даних: від базових до складних з використанням функцій і параметрів.</p>
+        </section>
+        <section>
+            <h2>Швидкий пошук</h2>
+            <form action="search.html" method="get">
+                <input type="text" name="query" placeholder="Введіть ключове слово..." required>
+                <button type="submit">Шукати</button>
+            </form>
+        </section>
+        <section>
+            <h2>Приклади запитів</h2>
+            <div class="slider">
+                <div>
+                    <h3>Простий запит</h3>
+                    <pre>
+SELECT * FROM таблиця;
+                    </pre>
+                </div>
+                <div>
+                    <h3>Запит із функцією</h3>
+                    <pre>
+SELECT AVG(зарплата) FROM співробітники;
+                    </pre>
+                </div>
+                <div>
+                    <h3>Запит з параметрами</h3>
+                    <pre>
+SELECT * FROM товари WHERE ціна > 1000;
+                    </pre>
+                </div>
+            </div>
+        </section>
+        <section>
+            <h2>Як працюють запити</h2>
+            <img src="img/algoritm-040321.jpg" alt="Схема роботи запитів" style="width:100%; max-width:900px;">
+            <p>На зображенні показано, як користувач формує запит до бази даних та отримує результат.</p>
+        </section>
+        <section>
+            <h2>Поширені запитання</h2>
+            <details>
+                <summary>Що таке SQL-запит?</summary>
+                <p>SQL-запит — це інструкція для бази даних, яка визначає, що саме потрібно зробити з даними: отримати, змінити, видалити або додати.</p>
+            </details>
+            <details>
+                <summary>Які типи запитів існують?</summary>
+                <p>Основні типи: SELECT (вибірка даних), INSERT (додавання), UPDATE (оновлення), DELETE (видалення).</p>
+            </details>
+            <details>
+                <summary>Чи потрібні спеціальні програми для виконання запитів?</summary>
+                <p>Так, для роботи із запитами використовують програми, такі як MySQL Workbench, phpMyAdmin або командний рядок бази даних.</p>
+            </details>
+        </section>
+        <section>
+            <h2>Залишилися питання?</h2>
+            <p>Ми будемо раді допомогти вам!</p>
+            <a href="contact.html" class="button">Задати питання</a>
+        </section>
+        <section>
+            <h2>Останні оновлення</h2>
+            <ul>
+                <li><a href="create-queries.html">Як створити перший запит?</a></li>
+                <li><a href="queries-with-functions.html">ТОП-5 функцій SQL для аналізу даних</a></li>
+                <li><a href="parameterized-queries.html">Як працюють параметричні запити?</a></li>
+            </ul>
+        </section>
+        <section>
+            <h2>Перевірте свої знання</h2>
+            <form>
+                <label>Який запит використовується для вибірки даних?</label><br>
+                <input type="radio" name="query" value="SELECT" id="select"><label for="select">SELECT</label><br>
+                <input type="radio" name="query" value="INSERT" id="insert"><label for="insert">INSERT</label><br>
+                <input type="radio" name="query" value="DELETE" id="delete"><label for="delete">DELETE</label><br>
+                <button type="submit">Перевірити</button>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 LABA-1. Всі права захищено.</p>
+    </footer>
+</body>
+</html>
